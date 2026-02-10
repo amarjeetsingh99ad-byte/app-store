@@ -1,31 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8">
   <title>Admin Login</title>
 </head>
+
 <body>
 
-<h2>Admin Login</h2>
+  <h2>Admin Login</h2>
 
-<input type="email" id="email" placeholder="Email"><br><br>
-<input type="password" id="password" placeholder="Password"><br><br>
+  <input type="email" id="email" placeholder="Email"><br><br>
+  <input type="password" id="password" placeholder="Password"><br><br>
 
-<button onclick="login()">Login</button>
+  <button onclick="login()">Login</button>
 
-<script src="firebase.js"></script>
+  <!-- Firebase -->
+  <script src="firebase.js"></script>
 
-<script>
-  function login() {
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
+  <script>
+    function login() {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
 
-    firebase.auth().signInWithEmailAndPassword(email, password)
-      .then(() => {
-        alert("Login Successful");
-      })
-      .catch(err => alert(err.message));
-  }
-</script>
+      firebase.auth().signInWithEmailAndPassword(email, password)
+        .then(() => {
+          alert("Login Successful");
+        })
+        .catch((error) => {
+          alert(error.message);
+        });
+    }
+  </script>
 
 </body>
 </html>
