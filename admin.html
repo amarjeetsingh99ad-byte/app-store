@@ -1,36 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>Admin Login</title>
-</head>
+<!-- Firebase SDKs -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-storage-compat.js"></script>
 
-<body>
-
-  <h2>Admin Login</h2>
-
-  <input type="email" id="email" placeholder="Email"><br><br>
-  <input type="password" id="password" placeholder="Password"><br><br>
-
-  <button onclick="login()">Login</button>
-
-  <!-- Firebase -->
-  <script src="firebase.js"></script>
-
-  <script>
-    function login() {
-      const email = document.getElementById("email").value;
-      const password = document.getElementById("password").value;
-
-      firebase.auth().signInWithEmailAndPassword(email, password)
-        .then(() => {
-          alert("Login Successful");
-        })
-        .catch((error) => {
-          alert(error.message);
-        });
-    }
-  </script>
-
-</body>
-</html>
+<script src="firebase.js"></script>
